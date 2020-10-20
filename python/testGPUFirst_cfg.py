@@ -33,7 +33,7 @@ process.options.numberOfStreams = 0
 
 from HeterogeneousCore.CUDACore.SwitchProducerCUDA import SwitchProducerCUDA
 
-process.load("CUDAdemo.testGPUFirst.prod1Switch_cff")
+process.load("CUDAdemo.testGPUFirst.prodSwitch1_cff")
 
 # GPU producers
 from CUDAdemo.testGPUFirst.testCUDAProducerGPUFirst_cfi import testCUDAProducerGPUFirst
@@ -91,7 +91,7 @@ process.t = cms.Task(
     #process.prod6Task
 )
 process.p = cms.Path()
-if includeAnalyzer:
-    process.p += process.anaCUDA
+#if includeAnalyzer:
+#    process.p += process.anaCUDA
 process.p.associate(process.t)
 process.ep = cms.EndPath(process.out)
